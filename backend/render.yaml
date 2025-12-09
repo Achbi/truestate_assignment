@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: truestate-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Add MONGODB_URI in Render dashboard (Settings → Environment)
+
